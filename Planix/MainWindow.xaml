@@ -1,0 +1,74 @@
+﻿<Window x:Class="Planix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Planix"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        FontFamily="{StaticResource EBGaramond}"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="750" Width="1350">
+    <Border Background="{StaticResource Ocean}" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border
+                Margin="3 3 3 0" CornerRadius="8"
+                Background="{StaticResource OceanLight}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock 
+                            Text="PLANIX:" Margin="20 0"
+                            Style="{StaticResource Title}"/>
+                        <TextBlock
+                            Text="Every moment, planned."
+                            FontFamily="{StaticResource EBGaramondItalic}"
+                            Style="{StaticResource Title}"/>
+                    </StackPanel>
+                    <fa:FontAwesome
+                        Grid.Column="1"
+                        MouseDown="PowerOff_MouseDown"
+                        Style="{StaticResource CloseButton}"/>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border
+                    Margin="3" CornerRadius="8"
+                    Background="{StaticResource OceanLight}">
+                    <StackPanel
+                        Orientation="Vertical">
+                        <Calendar 
+                            CalendarButtonStyle="{StaticResource CalendarCalendarYearButtonStyle}" 
+                            CalendarDayButtonStyle="{StaticResource CalendarCalendarDayButtonStyle}" 
+                            Style="{StaticResource CalendarStyle}" 
+                            x:Name="Calendar"
+                            Language="ENG"
+                            BorderThickness="0"
+                            Foreground="{StaticResource Lime}"
+                            Background="Transparent"/>
+                    </StackPanel>
+                </Border>
+                <Border
+                    Grid.Column="1"
+                    Margin="0 3 3 3" CornerRadius="8"
+                    Background="{StaticResource Lime}">
+
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\EBGaramond-Italic.ttf" />
+    <None Remove="Resources\Fonts\EBGaramond-Medium.ttf" />
+    <None Remove="Resources\Fonts\EBGaramond-Regular.ttf" />
+    <None Remove="Resources\Fonts\EBGaramond-SemiBold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+    <Folder Include="Resources\Ultilities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Fonts\EBGaramond-Italic.ttf" />
+    <Resource Include="Resources\Fonts\EBGaramond-Medium.ttf" />
+    <Resource Include="Resources\Fonts\EBGaramond-Regular.ttf" />
+    <Resource Include="Resources\Fonts\EBGaramond-SemiBold.ttf" />
+  </ItemGroup>
+
+</Project>

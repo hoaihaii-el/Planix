@@ -1,0 +1,19 @@
+﻿<Application x:Class="Planix.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Planix"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Color.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Button.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Text.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/Calendar.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <FontFamily x:Key="EBGaramond">./Resources/Fonts/EBGaramond-Regular.ttf#EB Garamond</FontFamily>
+            <FontFamily x:Key="EBGaramondItalic">./Resources/Fonts/EBGaramond-Italic.ttf#EB Garamond</FontFamily>
+            <FontFamily x:Key="EBGaramondSemiBold">./Resources/Fonts/EBGaramond-SemiBold.ttf#EB Garamond</FontFamily>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
