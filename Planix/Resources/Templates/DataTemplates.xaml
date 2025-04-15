@@ -5,10 +5,10 @@
     </DataTemplate>
 
     <DataTemplate x:Key="EventTemplate">
-        <Border Cursor="Hand" Margin="3 0 0 0" Width="150" Height="{Binding Height}" CornerRadius="5">
+        <Border Cursor="Hand" Margin="3 0 0 0" Width="135" Height="{Binding Height}" CornerRadius="5">
             <Border.Style>
                 <Style TargetType="Border">
-                    <Setter Property="Background" Value="#C2FFC7"/>
+                    <Setter Property="Background" Value="{StaticResource OceanLight}"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding EventType}" Value="General">
                             <Setter Property="Background" Value="#80C4E9"/>
@@ -23,7 +23,7 @@
                     CommandParameter="{Binding}" />
             </Border.InputBindings>
             <StackPanel Orientation="Vertical">
-                <Label>
+                <Label Foreground="{StaticResource Lime}">
                     <Label.Style>
                         <Style TargetType="Label">
                             <Setter Property="Content" Value="{Binding Title}"/>
@@ -35,14 +35,14 @@
                         </Style>
                     </Label.Style>
                 </Label>
-                <Label Content="{Binding Time}"/>
+                <Label Content="{Binding Time}" Foreground="{StaticResource Lime}"/>
             </StackPanel>
         </Border>
     </DataTemplate>
 
     <DataTemplate x:Key="DayHeaderTemplate">
         <Border Margin="20 5">
-            <Label Content="{Binding DateStr}" Width="124.857" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Content="{Binding DateStr}" Width="102.857" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="Background" Value="Transparent"/>

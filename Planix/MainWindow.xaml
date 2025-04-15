@@ -58,6 +58,7 @@
                             x:Name="Calendar"
                             Language="ENG"
                             BorderThickness="0"
+                            SelectedDatesChanged="Calendar_SelectedDatesChanged"
                             Foreground="{StaticResource Lime}"
                             Background="Transparent"/>
                     </StackPanel>
@@ -83,11 +84,13 @@
                                 </Grid.ColumnDefinitions>
                                 <fa:FontAwesome
                                     Grid.Column="0"
+                                    MouseDown="PrevWeek_Click"
                                     Foreground="{StaticResource Ocean}"
                                     Style="{StaticResource CloseButton}"
                                     Icon="ChevronLeft"/>
                                 <fa:FontAwesome 
                                     Grid.Column="1"
+                                    MouseDown="NextWeek_Click"
                                     Foreground="{StaticResource Ocean}"
                                     Style="{StaticResource CloseButton}"
                                     Icon="ChevronRight"/>
@@ -139,7 +142,7 @@
                                     </ItemsControl>
                                     <Label MouseDown="Event_Detect"/>
                                     <Canvas>
-                                        <Border x:Name="TimeLine" Background="Red" Width="1150" CornerRadius="4" Height="2"/>
+                                        <Border x:Name="TimeLine" Background="Red" Width="1000" CornerRadius="4" Height="2"/>
                                     </Canvas>
                                     <ItemsControl 
                                         ItemsSource="{Binding Events}"

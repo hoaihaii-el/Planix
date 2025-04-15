@@ -38,6 +38,10 @@ namespace Planix.Resources.Ultilities
         {
             try
             {
+                if (parameter == null)
+                {
+                    return true;
+                }
                 return _canExecute == null ? true : _canExecute((T)parameter);
             }
             catch
