@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="Resources/Styles/Button.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Text.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Calendar.xaml"/>
+                <ResourceDictionary Source="Resources/Templates/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <FontFamily x:Key="EBGaramond">./Resources/Fonts/EBGaramond-Regular.ttf#EB Garamond</FontFamily>
             <FontFamily x:Key="EBGaramondItalic">./Resources/Fonts/EBGaramond-Italic.ttf#EB Garamond</FontFamily>

@@ -66,7 +66,101 @@
                     Grid.Column="1"
                     Margin="0 3 3 3" CornerRadius="8"
                     Background="{StaticResource Lime}">
-
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <fa:FontAwesome
+                                    Grid.Column="0"
+                                    Foreground="{StaticResource Ocean}"
+                                    Style="{StaticResource CloseButton}"
+                                    Icon="ChevronLeft"/>
+                                <fa:FontAwesome 
+                                    Grid.Column="1"
+                                    Foreground="{StaticResource Ocean}"
+                                    Style="{StaticResource CloseButton}"
+                                    Icon="ChevronRight"/>
+                            </Grid>
+                            <ItemsControl 
+                                Grid.Column="1"
+                                ItemsSource="{Binding CurrentWeek}"
+                                ItemTemplate="{StaticResource DayHeaderTemplate}"
+                                d:ItemsSource="{d:SampleData ItemCount=7}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </Grid>
+                        <ScrollViewer Grid.Row="1" FontSize="14">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="90"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <ItemsControl
+                                    Grid.Column="0"
+                                    ItemsSource="{Binding Hours}"
+                                    ItemTemplate="{StaticResource HourTemplate}"
+                                    d:ItemsSource="{d:SampleData ItemCount=8}"/>
+                                <Grid
+                                    Grid.Column="1" Grid.ColumnSpan="7">
+                                    <ItemsControl 
+                                        ItemsSource="{Binding Days}" 
+                                        d:ItemsSource="{d:SampleData ItemCount=161}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <UniformGrid Columns="7"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Height="60" BorderThickness="1 0 0 1" BorderBrush="DarkGray"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    <Label MouseDown="Event_Detect"/>
+                                    <Canvas>
+                                        <Border x:Name="TimeLine" Background="Red" Width="1150" CornerRadius="4" Height="2"/>
+                                    </Canvas>
+                                    <ItemsControl 
+                                        ItemsSource="{Binding Events}"
+                                        ItemTemplate="{StaticResource EventTemplate}"
+                                        d:ItemsSource="{d:SampleData ItemCount=10}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <Canvas/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemContainerStyle>
+                                            <Style TargetType="ContentPresenter">
+                                                <Setter Property="Canvas.Left" Value="{Binding Left}"/>
+                                                <Setter Property="Canvas.Top" Value="{Binding Top}"/>
+                                            </Style>
+                                        </ItemsControl.ItemContainerStyle>
+                                    </ItemsControl>
+                                </Grid>
+                            </Grid>
+                        </ScrollViewer>
+                    </Grid>
                 </Border>
             </Grid>
         </Grid>

@@ -16,5 +16,10 @@ namespace Planix
         {
             this.Close();
         }
+
+        private void Event_Detect(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
