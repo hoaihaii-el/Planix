@@ -5,7 +5,7 @@
     </DataTemplate>
 
     <DataTemplate x:Key="EventTemplate">
-        <Border Cursor="Hand" Margin="3 0 0 0" Width="135" Height="{Binding Height}" CornerRadius="5">
+        <Border Cursor="Hand" Margin="0 0 0 0" Width="138" Height="{Binding Height}" CornerRadius="5">
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="Background" Value="{StaticResource OceanLight}"/>

@@ -9,6 +9,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
+        PreviewMouseLeftButtonDown="LastMouseLeft_Click"
         FontFamily="{StaticResource EBGaramond}"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="750" Width="1350">
@@ -26,11 +27,14 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="50"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel
+                        Orientation="Horizontal"
+                        MouseDown="Header_MouseDown">
                         <TextBlock 
                             Text="PLANIX:" Margin="20 0"
                             Style="{StaticResource Title}"/>
                         <TextBlock
+                            Width="1150"
                             Text="Every moment, planned."
                             FontFamily="{StaticResource EBGaramondItalic}"
                             Style="{StaticResource Title}"/>

@@ -22,6 +22,8 @@ namespace Planix
             Canvas.SetTop(TimeLine, DateTime.Now.Hour * 60 + DateTime.Now.Minute);
         }
 
+        public static Point LastMouseClickPostition { get; private set; }
+
         private void _Timer_Tick(object? sender, EventArgs e)
         {
             Canvas.SetTop(TimeLine, DateTime.Now.Hour * 60 + DateTime.Now.Minute);
@@ -111,6 +113,16 @@ namespace Planix
             {
                 vm.NextWeek();
             }
+        }
+
+        private void Header_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void LastMouseLeft_Click(object sender, MouseButtonEventArgs e)
+        {
+            LastMouseClickPostition = PointToScreen(e.GetPosition(this));
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Planix.Models;
 using Planix.Resources.Ultilities;
+using Planix.Views;
 using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -39,7 +41,7 @@ namespace Planix.ViewModels
             set => SetProperty(ref _Events, value);
         }
 
-        //public ICommand EventItemClickCM { get; set; }
+        public ICommand EventItemClickCM { get; set; }
 
         public MainVM()
         {
@@ -55,6 +57,29 @@ namespace Planix.ViewModels
                 Location = "Online",
                 MeetingURL = "https://example.com"
             });
+
+            EventItemClickCM = new RelayCommand<Event>((p) => true, (p) =>
+            {
+                OpenEventDetail(p);
+            });
+        }
+
+        private void OpenEventDetail(Event e)
+        {
+            var eventDetail = new EventDetail(e);
+            eventDetail.Left = e.Left + 645;
+
+            var screenHeight = SystemParameters.PrimaryScreenHeight;
+            if (MainWindow.LastMouseClickPostition.Y + eventDetail.Height > screenHeight)
+            {
+                eventDetail.Top = MainWindow.LastMouseClickPostition.Y - 450;
+            }
+            else
+            {
+                eventDetail.Top = MainWindow.LastMouseClickPostition.Y;
+            }
+
+            eventDetail.ShowDialog();
         }
 
         public void InitializeWeek()
@@ -113,12 +138,14 @@ namespace Planix.ViewModels
         public void AddEvent(int dayIndex, int hour, int min)
         {
             var date = CurrentWeek[dayIndex].Date;
-
-            Events.Add(new Event
+            var newEvent = new Event
             {
-                StartTime = new DateTime(date.Year, date.Month, date.Day, hour, min, 0),
-                EndTime = new DateTime(date.Year, date.Month, date.Day, hour + 1, min, 0),
-            });
+                Title = "Empty Event",
+                StartTime = new DateTime(date.Year, date.Month, date.Day, hour, min, 0)
+            };
+            newEvent.EndTime = newEvent.StartTime.AddHours(1);
+
+            Events.Add(newEvent);
         }
     }
 }
