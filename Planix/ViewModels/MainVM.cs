@@ -5,7 +5,6 @@ using Planix.Views;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Planix.ViewModels
 {
@@ -27,6 +26,12 @@ namespace Planix.ViewModels
             1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,
         };
 
+        private const double _EventCardWidth = 142.857;
+        private const double _EventCardHeight = 60;
+        private const double _EventDetailWindowWidth = 350;
+        private const double _EventDetailWindowHeight = 500;
+        private const double _PixelFromMainWindowTopToEventsGrid = 100;
+        private const double _PixelFromMainWindowLeftToEventSGrid = 470;
 
         private ObservableCollection<CustomDateTime> _CurrentWeek = new ObservableCollection<CustomDateTime>();
         public ObservableCollection<CustomDateTime> CurrentWeek
@@ -73,17 +78,23 @@ namespace Planix.ViewModels
             }
 
             var eventDetail = new EventDetail(e);
+            var screenWidth = SystemParameters.PrimaryScreenWidth;
             var screenHeight = SystemParameters.PrimaryScreenHeight;
 
-            var baseX = MainWindow.Instance.Left + 470;
-            var baseY = MainWindow.Instance.Top + 103;
+            var baseX = MainWindow.Instance.Left + _PixelFromMainWindowLeftToEventSGrid;
+            var baseY = MainWindow.Instance.Top + _PixelFromMainWindowTopToEventsGrid;
             var eventPosition = Helper.GetEventPosition(e);
 
             var absoluteX = baseX + eventPosition.Left;
             var absoluteY = baseY + eventPosition.Top - MainWindow.Instance.EventsGrid.VerticalOffset;
 
-            eventDetail.Left = absoluteX;
-            eventDetail.Top = absoluteY + 500 > screenHeight ? absoluteY - 444 : absoluteY;
+            eventDetail.Left = absoluteX + _EventDetailWindowWidth > screenWidth 
+                ? absoluteX - _EventDetailWindowWidth - _EventCardWidth 
+                : absoluteX;
+
+            eventDetail.Top = absoluteY + _EventDetailWindowHeight > screenHeight
+                ? absoluteY - _EventDetailWindowHeight + _EventCardHeight - 3
+                : absoluteY + 3;
             eventDetail.ShowDialog();
         }
 

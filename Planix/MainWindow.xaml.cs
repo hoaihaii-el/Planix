@@ -64,16 +64,7 @@ namespace Planix
             int hourIndex = (int)(clickedPosition.Y / rowHeight);
             double minute = (clickedPosition.Y % rowHeight) / rowHeight * 60;
 
-            if (minute > 15 && minute <= 45)
-            {
-                minute = 30;
-            }
-            else
-            {
-                minute = 0;
-            }
-
-            vm.AddEvent(dayIndex, hourIndex, (int)minute);
+            vm.AddEvent(dayIndex, hourIndex, minute < 30 ? 0 : 30);
         }
 
         private void PrevWeek_Click(object sender, MouseButtonEventArgs e)

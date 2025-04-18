@@ -1,4 +1,5 @@
 ﻿using Planix.Models;
+using System.Windows;
 
 namespace Planix.Helpers
 {
@@ -25,9 +26,9 @@ namespace Planix.Helpers
             return (left, top);
         }
 
-        //public static (double Width, double Height) GetCurrentScreenSize()
+        //public static (double Width, double Height) GetScreenSizeContainWindow(Window window)
         //{
-            
+        //    return null;
         //}
     }
 }
