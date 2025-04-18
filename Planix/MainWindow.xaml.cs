@@ -1,4 +1,5 @@
 ﻿using Planix.ViewModels;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,10 +12,20 @@ namespace Planix
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static MainWindow? _instance;
+
+        public static MainWindow? Instance
+        {
+            get => _instance;
+            private set => _instance = value;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainVM();
+
+            Instance = this;
+            Instance.DataContext = new MainVM();
             _Timer = new DispatcherTimer();
             _Timer.Interval = TimeSpan.FromSeconds(60);
             _Timer.Tick += _Timer_Tick;
@@ -22,7 +33,7 @@ namespace Planix
             Canvas.SetTop(TimeLine, DateTime.Now.Hour * 60 + DateTime.Now.Minute);
         }
 
-        public static Point LastMouseClickPostition { get; private set; }
+        public double XLeft => base.Left;
 
         private void _Timer_Tick(object? sender, EventArgs e)
         {
@@ -105,11 +116,12 @@ namespace Planix
                 return;
             }
 
-            if (Calendar.SelectedDate.Value.Date < vm.CurrentWeek[0].Date.Date)
+            while (Calendar.SelectedDate.Value.Date < vm.CurrentWeek[0].Date.Date)
             {
                 vm.PrevWeek();
             }
-            else if (Calendar.SelectedDate.Value.Date > vm.CurrentWeek[6].Date.Date)
+
+            while (Calendar.SelectedDate.Value.Date > vm.CurrentWeek[6].Date.Date)
             {
                 vm.NextWeek();
             }
@@ -120,9 +132,9 @@ namespace Planix
             this.DragMove();
         }
 
-        private void LastMouseLeft_Click(object sender, MouseButtonEventArgs e)
+        private void MainWindow_Closed(object sender, EventArgs e)
         {
-            LastMouseClickPostition = PointToScreen(e.GetPosition(this));
+            Instance = null;
         }
     }
 }

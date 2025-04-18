@@ -9,8 +9,8 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        PreviewMouseLeftButtonDown="LastMouseLeft_Click"
-        FontFamily="{StaticResource EBGaramond}"
+        Closed="MainWindow_Closed"
+        FontFamily="{StaticResource JosefinSlab}"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="750" Width="1350">
     <Border Background="{StaticResource Ocean}" CornerRadius="10">
@@ -31,12 +31,12 @@
                         Orientation="Horizontal"
                         MouseDown="Header_MouseDown">
                         <TextBlock 
-                            Text="PLANIX:" Margin="20 0"
+                            Text="PLANIX:" Margin="15 0"
                             Style="{StaticResource Title}"/>
                         <TextBlock
                             Width="1150"
                             Text="Every moment, planned."
-                            FontFamily="{StaticResource EBGaramondItalic}"
+                            FontFamily="{StaticResource JosefinSlabItalic}"
                             Style="{StaticResource Title}"/>
                     </StackPanel>
                     <fa:FontAwesome
@@ -111,7 +111,7 @@
                                 </ItemsControl.ItemsPanel>
                             </ItemsControl>
                         </Grid>
-                        <ScrollViewer Grid.Row="1" FontSize="14">
+                        <ScrollViewer Grid.Row="1" FontSize="14" x:Name="EventsGrid">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="90"/>

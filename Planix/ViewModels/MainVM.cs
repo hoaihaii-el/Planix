@@ -1,4 +1,5 @@
-﻿using Planix.Models;
+﻿using Planix.Helpers;
+using Planix.Models;
 using Planix.Resources.Ultilities;
 using Planix.Views;
 using System.Collections.ObjectModel;
@@ -66,19 +67,23 @@ namespace Planix.ViewModels
 
         private void OpenEventDetail(Event e)
         {
+            if (MainWindow.Instance == null)
+            {
+                return;
+            }
+
             var eventDetail = new EventDetail(e);
-            eventDetail.Left = e.Left + 645;
-
             var screenHeight = SystemParameters.PrimaryScreenHeight;
-            if (MainWindow.LastMouseClickPostition.Y + eventDetail.Height > screenHeight)
-            {
-                eventDetail.Top = MainWindow.LastMouseClickPostition.Y - 450;
-            }
-            else
-            {
-                eventDetail.Top = MainWindow.LastMouseClickPostition.Y;
-            }
 
+            var baseX = MainWindow.Instance.Left + 470;
+            var baseY = MainWindow.Instance.Top + 103;
+            var eventPosition = Helper.GetEventPosition(e);
+
+            var absoluteX = baseX + eventPosition.Left;
+            var absoluteY = baseY + eventPosition.Top - MainWindow.Instance.EventsGrid.VerticalOffset;
+
+            eventDetail.Left = absoluteX;
+            eventDetail.Top = absoluteY + 500 > screenHeight ? absoluteY - 444 : absoluteY;
             eventDetail.ShowDialog();
         }
 

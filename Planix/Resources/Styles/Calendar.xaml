@@ -99,7 +99,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Button x:Name="PART_PreviousButton" Grid.Column="0" Focusable="False" HorizontalAlignment="Left" Height="20" Grid.Row="0" Template="{StaticResource CalendarArrowButtonTemplate}" Width="28"/>
-                        <Button x:Name="PART_HeaderButton" Grid.Column="1" Focusable="False" FontWeight="Bold" FontSize="16.5" HorizontalAlignment="Center" Grid.Row="0" Template="{StaticResource CalendarHeaderTemplate}" VerticalAlignment="Center"/>
+                        <Button x:Name="PART_HeaderButton" Grid.Column="1" Focusable="False" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center" Grid.Row="0" Template="{StaticResource CalendarHeaderTemplate}" VerticalAlignment="Center"/>
                         <Button x:Name="PART_NextButton" Grid.Column="2" Focusable="False" HorizontalAlignment="Right" Height="20" Grid.Row="0" Template="{StaticResource CalendarArrowRightButtonTemplate}" Width="28"/>
                         <Grid x:Name="PART_MonthView" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="6,-1,6,6" Grid.Row="1" Visibility="Visible">
                             <Grid.ColumnDefinitions>

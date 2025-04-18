@@ -3,8 +3,9 @@
     <Style
         x:Key="Title"
         TargetType="TextBlock">
-        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontSize" Value="22"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="{StaticResource JosefinSlabSemiBold}"/> 
         <Setter Property="Foreground" Value="{StaticResource Lime}"/>
     </Style>
 </ResourceDictionary>

@@ -22,8 +22,12 @@
                     Command="{Binding DataContext.EventItemClickCM, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                     CommandParameter="{Binding}" />
             </Border.InputBindings>
-            <StackPanel Orientation="Vertical">
-                <Label Foreground="{StaticResource Lime}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Foreground="{StaticResource Lime}" FontSize="15" VerticalContentAlignment="Center">
                     <Label.Style>
                         <Style TargetType="Label">
                             <Setter Property="Content" Value="{Binding Title}"/>
@@ -35,14 +39,17 @@
                         </Style>
                     </Label.Style>
                 </Label>
-                <Label Content="{Binding Time}" Foreground="{StaticResource Lime}"/>
-            </StackPanel>
+                <Label 
+                    Grid.Row="1"
+                    Content="{Binding Time}" 
+                    Foreground="{StaticResource Lime}"/>
+            </Grid>
         </Border>
     </DataTemplate>
 
     <DataTemplate x:Key="DayHeaderTemplate">
         <Border Margin="20 5">
-            <Label Content="{Binding DateStr}" Width="102.857" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Content="{Binding DateStr}" FontSize="15" Width="102.857" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
             <Border.Style>
                 <Style TargetType="Border">
                     <Setter Property="Background" Value="Transparent"/>

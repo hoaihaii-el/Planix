@@ -6,15 +6,22 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <FontFamily x:Key="EBGaramond">./Resources/Fonts/EBGaramond-Regular.ttf#EB Garamond</FontFamily>
+                    <FontFamily x:Key="EBGaramondItalic">./Resources/Fonts/EBGaramond-Italic.ttf#EB Garamond</FontFamily>
+                    <FontFamily x:Key="EBGaramondSemiBold">./Resources/Fonts/EBGaramond-SemiBold.ttf#EB Garamond</FontFamily>
+                    <FontFamily x:Key="Quicksand">./Resources/Fonts/Quicksand-Regular.ttf#Quicksand</FontFamily>
+                    <FontFamily x:Key="QuicksandSemiBold">./Resources/Fonts/Quicksand-SemiBold.ttf#Quicksand</FontFamily>
+                    <FontFamily x:Key="JosefinSlab">./Resources/Fonts/JosefinSlab-Medium.ttf#Josefin Slab</FontFamily>
+                    <FontFamily x:Key="JosefinSlabItalic">./Resources/Fonts/JosefinSlab-Italic.ttf#Josefin Slab</FontFamily>
+                    <FontFamily x:Key="JosefinSlabSemiBold">./Resources/Fonts/JosefinSlab-SemiBold.ttf#Josefin Slab</FontFamily>
+                </ResourceDictionary>
                 <ResourceDictionary Source="Resources/Styles/Color.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Button.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Text.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Calendar.xaml"/>
                 <ResourceDictionary Source="Resources/Templates/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <FontFamily x:Key="EBGaramond">./Resources/Fonts/EBGaramond-Regular.ttf#EB Garamond</FontFamily>
-            <FontFamily x:Key="EBGaramondItalic">./Resources/Fonts/EBGaramond-Italic.ttf#EB Garamond</FontFamily>
-            <FontFamily x:Key="EBGaramondSemiBold">./Resources/Fonts/EBGaramond-SemiBold.ttf#EB Garamond</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

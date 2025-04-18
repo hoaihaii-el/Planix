@@ -1,4 +1,6 @@
-﻿namespace Planix.Helpers
+﻿using Planix.Models;
+
+namespace Planix.Helpers
 {
     public class Helper
     {
@@ -14,5 +16,18 @@
             { DayOfWeek.Friday, 5 * CellWidth },
             { DayOfWeek.Saturday, 6 * CellWidth }
         };
+
+        public static (double Left, double Top) GetEventPosition(Event e)
+        {
+            var left = DayOfWeekWidth[e.StartTime.DayOfWeek];
+            var top = e.StartTime.Hour * 60 + e.StartTime.Minute;
+
+            return (left, top);
+        }
+
+        //public static (double Width, double Height) GetCurrentScreenSize()
+        //{
+            
+        //}
     }
 }

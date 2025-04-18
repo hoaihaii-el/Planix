@@ -9,7 +9,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        FontFamily="{StaticResource EBGaramond}"
+        FontFamily="{StaticResource JosefinSlab}"
         Height="500" Width="350">
     <Border Background="{StaticResource Ocean}" CornerRadius="10">
         <Grid>

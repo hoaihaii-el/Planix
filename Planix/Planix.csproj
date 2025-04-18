@@ -13,6 +13,13 @@
     <None Remove="Resources\Fonts\EBGaramond-Medium.ttf" />
     <None Remove="Resources\Fonts\EBGaramond-Regular.ttf" />
     <None Remove="Resources\Fonts\EBGaramond-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\JosefinSlab-Italic.ttf" />
+    <None Remove="Resources\Fonts\JosefinSlab-Medium.ttf" />
+    <None Remove="Resources\Fonts\JosefinSlab-Regular.ttf" />
+    <None Remove="Resources\Fonts\JosefinSlab-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\Quicksand-Light.ttf" />
+    <None Remove="Resources\Fonts\Quicksand-Regular.ttf" />
+    <None Remove="Resources\Fonts\Quicksand-SemiBold.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +35,13 @@
     <Resource Include="Resources\Fonts\EBGaramond-Medium.ttf" />
     <Resource Include="Resources\Fonts\EBGaramond-Regular.ttf" />
     <Resource Include="Resources\Fonts\EBGaramond-SemiBold.ttf" />
+    <Resource Include="Resources\Fonts\JosefinSlab-Italic.ttf" />
+    <Resource Include="Resources\Fonts\JosefinSlab-Medium.ttf" />
+    <Resource Include="Resources\Fonts\JosefinSlab-Regular.ttf" />
+    <Resource Include="Resources\Fonts\JosefinSlab-SemiBold.ttf" />
+    <Resource Include="Resources\Fonts\Quicksand-Light.ttf" />
+    <Resource Include="Resources\Fonts\Quicksand-Regular.ttf" />
+    <Resource Include="Resources\Fonts\Quicksand-SemiBold.ttf" />
   </ItemGroup>
 
 </Project>
