@@ -31,6 +31,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CustomControls\CustomControls.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\Fonts\EBGaramond-Italic.ttf" />
     <Resource Include="Resources\Fonts\EBGaramond-Medium.ttf" />
     <Resource Include="Resources\Fonts\EBGaramond-Regular.ttf" />

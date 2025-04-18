@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Planix.Views"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:ctrls="clr-namespace:CustomControls;assembly=CustomControls"
         mc:Ignorable="d"
         AllowsTransparency="True"
         Background="Transparent"
@@ -37,6 +38,34 @@
                         Grid.Column="1"
                         MouseDown="PowerOff_MouseDown"
                         Style="{StaticResource CloseButton}"/>
+                </Grid>
+            </Border>
+            <Border
+                Grid.Row="1"
+                Margin="3"
+                CornerRadius="8"
+                Background="{StaticResource OceanLight}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ctrls:PlaceholderTextBox
+                        Margin="10"
+                        FontSize="20"
+                        Foreground="{StaticResource Lime}"
+                        PlaceholderText="Title"/>
+                    <ctrls:PlaceholderTextBox
+                        Grid.Row="1"
+                        Margin="10"
+                        FontSize="20"
+                        TextWrapping="Wrap"
+                        Foreground="{StaticResource Lime}"
+                        PlaceholderText="Description"/>
                 </Grid>
             </Border>
         </Grid>
