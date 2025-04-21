@@ -3,6 +3,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:CustomControls">
 
+    <!-- Include CusCtrl.Colors.xaml -->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/CustomControls;component/Themes/CusCtrl.Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
     <Style TargetType="{x:Type local:PlaceholderTextBox}">
         <Setter Property="Template">
             <Setter.Value>
@@ -19,7 +24,7 @@
                             <TextBlock
                                 x:Name="HeaderHint"
                                 FontSize="13"
-                                Foreground="#b4ba88"
+                                Foreground="{StaticResource CusCtrl.HintTextColor}"
                                 Padding="3 0 3 3"
                                 IsHitTestVisible="False"
                                 Text="{TemplateBinding PlaceholderText}">
@@ -50,7 +55,7 @@
                                 <TextBlock
                                     x:Name="Placeholder"
                                     Text="{TemplateBinding PlaceholderText}"
-                                    Foreground="#b4ba88"
+                                    Foreground="{StaticResource CusCtrl.HintTextColor}"
                                     IsHitTestVisible="False"
                                     VerticalAlignment="Center"
                                     Padding="3 0">
@@ -72,5 +77,79 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <Style TargetType="{x:Type local:HintDatePicker}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:HintDatePicker}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock 
+                                x:Name="PART_TextBlock"
+                                Grid.Column="0"
+                                Text="{TemplateBinding DisplayText}"
+                                VerticalAlignment="Center"
+                                Margin="5,0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="Foreground" 
+                                                Value="{StaticResource CusCtrl.TextColor}"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Text}" Value="dd/MM/yyyy">
+                                                <Setter Property="Foreground" Value="{StaticResource CusCtrl.HintTextColor}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                            <Button 
+                                Grid.Column="1"
+                                x:Name="PART_Button"
+                                BorderThickness="0"
+                                Width="24"
+                                Height="24"
+                                Margin="0,0,5,0"
+                                Command="{TemplateBinding OpenPopupCommand}">
+                                <Path Data="M 0,4 H 12 V 12 H 0 Z M 2,2 A 1,1 0 1 1 3,2 M 9,2 A 1,1 0 1 1 10,2 M 2,6 H 10 M 2,9 H 10"
+                                      Fill="#19485F"
+                                      Stretch="Uniform"/>
+                            </Button>
+
+                            <Popup 
+                                x:Name="PART_Popup"
+                                IsOpen="{TemplateBinding IsPopupOpen}"
+                                Placement="Bottom"
+                                PlacementTarget="{Binding ElementName=PART_TextBlock}"
+                                AllowsTransparency="True"
+                                StaysOpen="False">
+                                <Border Background="White"
+                                    BorderBrush="Gray"
+                                    BorderThickness="1"
+                                    CornerRadius="2">
+                                    <Calendar 
+                                        x:Name="Calendar"
+                                        Style="{TemplateBinding CalendarStyle}" 
+                                        CalendarButtonStyle="{TemplateBinding CalendarButtonStyle}"
+                                        CalendarDayButtonStyle="{TemplateBinding CalendarDayButtonStyle}"
+                                        SelectedDate="{Binding SelectedDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                        SelectionMode="SingleDate"/>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

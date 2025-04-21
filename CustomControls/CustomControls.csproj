@@ -7,4 +7,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Page Remove="Themes\CusCtrl.Colors.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Themes\CusCtrl.Colors.xaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

@@ -57,11 +57,9 @@
                         Orientation="Vertical">
                         <Calendar 
                             CalendarButtonStyle="{StaticResource CalendarCalendarYearButtonStyle}" 
-                            CalendarDayButtonStyle="{StaticResource CalendarCalendarDayButtonStyle}" 
+                            CalendarDayButtonStyle="{StaticResource CalendarCalendarDayButtonLimeStyle}" 
                             Style="{StaticResource CalendarStyle}" 
                             x:Name="Calendar"
-                            Language="ENG"
-                            BorderThickness="0"
                             SelectedDatesChanged="Calendar_SelectedDatesChanged"
                             Foreground="{StaticResource Lime}"
                             Background="Transparent"/>

@@ -66,6 +66,15 @@
                         TextWrapping="Wrap"
                         Foreground="{StaticResource Lime}"
                         PlaceholderText="Description"/>
+                    <ctrls:HintDatePicker
+                        Margin="10"
+                        CalendarButtonStyle="{StaticResource CalendarCalendarYearButtonStyle}" 
+                        CalendarDayButtonStyle="{StaticResource CalendarCalendarDayButtonOceanStyle}"   
+                        CalendarStyle="{StaticResource CalendarStyle}"
+                        Foreground="{StaticResource Ocean}"
+                        FontSize="20"
+                        Grid.Row="2"
+                        Height="50"/>
                 </Grid>
             </Border>
         </Grid>

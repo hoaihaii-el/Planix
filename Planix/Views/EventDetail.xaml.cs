@@ -1,5 +1,6 @@
 ﻿using Planix.Models;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Planix.Views
 {
@@ -19,7 +20,7 @@ namespace Planix.Views
             this.DataContext = e;
         }
 
-        private void PowerOff_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void PowerOff_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.Close();
         }

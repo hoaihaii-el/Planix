@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="CusCtrl.Background" Color="#19485F"/>
+    <SolidColorBrush x:Key="CusCtrl.TextColor" Color="#D9E0A4"/>
+    <SolidColorBrush x:Key="CusCtrl.HintTextColor" Color="#b4ba88"/>
+</ResourceDictionary>
